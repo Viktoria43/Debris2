@@ -6,6 +6,7 @@
 /[Aa]ssets/[Aa]ssetStoreTools*
 /[Ll]ogs/
 .DS_Store
+/UserSettings/
 
 # Visual Studio 2015 cache directory
 /.vs/
