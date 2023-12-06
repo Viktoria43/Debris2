@@ -6,6 +6,7 @@
 /[Aa]ssets/[Aa]ssetStoreTools*
 /[Ll]ogs/
 .DS_Store
+/UserSettings/
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -25,6 +26,9 @@
 *.booproj
 *.svd
 *.pdb
+*.mdb
+*.opendb
+*.VC.db
 
 # Unity3D generated meta files
 *.pidb.meta
