@@ -9,7 +9,7 @@ public class Music : MonoBehaviour
     public Sprite soundOff;
     private bool isPlaying = true;
     public static Music instance;
-    public AudioSource audioSource;  // Changed from public to non-static
+    public AudioSource audioSource; // Changed from public to non-static
     public Button soundButton;
 
     void Awake()
@@ -33,7 +33,8 @@ public class Music : MonoBehaviour
 
             if (audioSource == null)
             {
-                Debug.LogError("AudioSource not found. Make sure it is attached to the same GameObject as the Music script.");
+                Debug.LogError(
+                    "AudioSource not found. Make sure it is attached to the same GameObject as the Music script.");
             }
         }
     }
@@ -52,7 +53,16 @@ public class Music : MonoBehaviour
     {
         if (isPlaying)
         {
-            soundButton.image.sprite = soundOff;
+            Debug.Log("Turning sound off");
+            if (soundButton != null)
+            {
+                soundButton.image.sprite = soundOff;
+            }
+            else
+            {
+                Debug.LogError("soundButton is null. Make sure it is assigned.");
+            }
+
             isPlaying = false;
 
             if (audioSource != null)
@@ -66,7 +76,16 @@ public class Music : MonoBehaviour
         }
         else
         {
-            soundButton.image.sprite = soundOn;
+            Debug.Log("Turning sound on");
+            if (soundButton != null)
+            {
+                soundButton.image.sprite = soundOn;
+            }
+            else
+            {
+                Debug.LogError("soundButton is null. Make sure it is assigned.");
+            }
+
             isPlaying = true;
 
             if (audioSource != null)
