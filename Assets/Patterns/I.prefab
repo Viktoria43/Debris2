@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 3099108025041228553}
   m_Layer: 0
   m_Name: ITop
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 2734678863385468192}
   m_Layer: 0
   m_Name: IBottom
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 3408745607066730410}
   m_Layer: 0
   m_Name: ITopper
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

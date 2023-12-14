@@ -16,7 +16,7 @@ public class spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(patO, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+        spawnRandom();
     }
 
     // Update is called once per frame
@@ -31,9 +31,11 @@ public class spawn : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
+        //so far detects only if the parent object collided
         if (collision.gameObject.CompareTag("Block"))
         {
             // Get the collision point and instantiate the object there
+            collision.gameObject.SetActive(false);
             spawnRandom();
         }
     }

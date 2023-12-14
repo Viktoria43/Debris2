@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7357708787177055628}
   m_Layer: 0
   m_Name: revLTop
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 8298054541890806457}
   m_Layer: 0
   m_Name: revLLeft
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 1108899093061232440}
   m_Layer: 0
   m_Name: revLTopper
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

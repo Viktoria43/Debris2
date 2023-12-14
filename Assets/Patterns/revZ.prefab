@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3099457829209825478}
   m_Layer: 0
   m_Name: revZTop
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 6157052561264225828}
   m_Layer: 0
   m_Name: revZLeft
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 6650360527661508858}
   m_Layer: 0
   m_Name: revZRight
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

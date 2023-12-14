@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 6447218701619672252}
   m_Layer: 0
   m_Name: ORight
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 7687561127181511341}
   m_Layer: 0
   m_Name: ODiag
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 4589568873142043586}
   m_Layer: 0
   m_Name: OTop
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
