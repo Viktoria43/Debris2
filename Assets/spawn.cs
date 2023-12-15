@@ -40,10 +40,12 @@ public class spawn : MonoBehaviour
         {
             // Get the collision point and instantiate the object there
             collision.gameObject.GetComponent<commonVars>().hasCollided = true;
+          //  collision.gameObject.SetActive(false);
             spawnRandom();
         }
     }
-    public void spawnRandom(){
+    public void spawnRandom()
+    {
         System.Random rd = new System.Random();
         int patNum = rd.Next(0, 7);
         switch (patNum)
