@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class spawn : MonoBehaviour
 {
@@ -30,12 +31,15 @@ public class spawn : MonoBehaviour
         }*/
     }
 
+    //This is called, when collision between the calling object and other object happens
     private void OnCollisionEnter2D(Collision2D collision){
         //so far detects only if the parent object collided
-        if (collision.gameObject.CompareTag("Block"))
+        //Variables.Object(collision.gameObject).Get("hasCollided");
+        bool check = collision.gameObject.GetComponent<commonVars>().hasCollided;
+        if (!check && collision.gameObject.CompareTag("Block"))
         {
             // Get the collision point and instantiate the object there
-            collision.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<commonVars>().hasCollided = true;
             spawnRandom();
         }
     }
