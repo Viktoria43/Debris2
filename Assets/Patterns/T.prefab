@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 5586074093329217406}
   - component: {fileID: 6208230860441448478}
   - component: {fileID: 2206619904629805101}
-  - component: {fileID: -4376395301854612329}
   - component: {fileID: 5899232733743550053}
   m_Layer: 0
   m_Name: T

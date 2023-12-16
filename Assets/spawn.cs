@@ -13,7 +13,9 @@ public class spawn : MonoBehaviour
     public GameObject patRevL;
     public GameObject patRevZ;
     public GameObject patI;
-    //public GameObject curObj;
+    private GameObject curObj;
+    PlayerMovement mv;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +31,26 @@ public class spawn : MonoBehaviour
         if(Time.frameCount % 60 == 0){
             spawnRandom();
         }*/
-    }
+        if (!mv.IsFalling() && !mv.hasCollided)
+        {
+            mv.hasCollided = true;
+            spawnRandom();
+        }
 
-    //This is called, when collision between the calling object and other object happens
+    }
+    /*
     private void OnCollisionEnter2D(Collision2D collision){
+        //so far detects only if the parent object collided
+        //Variables.Object(collision.gameObject).Get("hasCollided");
+        if (!hasCollided)
+        {
+            // Get the collision point and instantiate the object there
+            hasCollided = true;
+            sp.spawnRandom();
+        }
+    }*/
+    //This is called, when collision between the calling object and other object happens
+    /*private void OnCollisionEnter2D(Collision2D collision){
         //so far detects only if the parent object collided
         //Variables.Object(collision.gameObject).Get("hasCollided");
         bool check = collision.gameObject.GetComponent<commonVars>().hasCollided;
@@ -43,7 +61,7 @@ public class spawn : MonoBehaviour
           //  collision.gameObject.SetActive(false);
             spawnRandom();
         }
-    }
+    }*/
     public void spawnRandom()
     {
         System.Random rd = new System.Random();
@@ -51,28 +69,31 @@ public class spawn : MonoBehaviour
         switch (patNum)
         {
             case 0:
-                Instantiate(patI, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patI, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             case 1:
-                Instantiate(patL, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patL, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             case 2:
-                Instantiate(patO, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patO, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             case 3:
-                Instantiate(patRevL, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patRevL, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             case 4:
-                Instantiate(patRevZ, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patRevZ, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             case 5:
-                Instantiate(patT, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patT, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             case 6:
-                Instantiate(patZ, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patZ, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
                 break;
             default:
                 break;
         }
+        mv = curObj.GetComponent<PlayerMovement>();
+        rb = curObj.GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector3(0f, 0.5f, 0f);
     }
 }

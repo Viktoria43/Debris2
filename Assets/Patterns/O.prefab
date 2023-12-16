@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7226974014327640775}
   - component: {fileID: 5447021892583280502}
   - component: {fileID: 122355602769885022}
-  - component: {fileID: -7254588470752026682}
   - component: {fileID: 5369541965405914129}
   m_Layer: 0
   m_Name: O

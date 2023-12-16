@@ -6,13 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     
     private Rigidbody2D rb;
-
+    private spawn sp;
+    private GameObject help;
     void Start()
     {
         // Assuming the script is attached to a GameObject with a Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
+        //what
+        help = GameObject.FindGameObjectWithTag("Borders");
+        sp = help.GetComponent<spawn>();
     }
     public float speed = 1f;
+    public bool hasCollided = false;
 
     void Update()
     {
@@ -26,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    bool IsFalling()
+    public bool IsFalling()
     {
         // Check if the magnitude of the vertical velocity is greater than a threshold
         // You can adjust the threshold value based on your needs

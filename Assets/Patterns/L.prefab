@@ -528,7 +528,6 @@ GameObject:
   - component: {fileID: 1942021047157033973}
   - component: {fileID: 1021918136580192246}
   - component: {fileID: 115118323637004132}
-  - component: {fileID: 531104795329680311}
   - component: {fileID: 6091305102597055364}
   m_Layer: 0
   m_Name: L

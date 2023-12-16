@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 2044011350121854728}
   - component: {fileID: 1201169007605532401}
   - component: {fileID: 6876270986043677077}
-  - component: {fileID: 4575275944230086258}
   - component: {fileID: -4574331668507936151}
   m_Layer: 0
   m_Name: revL
