@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  hasCollided: 0
 --- !u!1 &1405154125381546320
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  hasCollided: 0
 --- !u!1 &1835412186353299190
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  hasCollided: 0
 --- !u!1 &4000713882888918610
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +532,7 @@ GameObject:
   - component: {fileID: 1021918136580192246}
   - component: {fileID: 115118323637004132}
   - component: {fileID: 6091305102597055364}
+  - component: {fileID: 591333639057386630}
   m_Layer: 0
   m_Name: L
   m_TagString: Block
@@ -692,3 +696,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   hasCollided: 0
+--- !u!114 &591333639057386630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000713882888918610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3839ee8169b4c56bf905cb9f1a2472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

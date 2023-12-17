@@ -286,6 +286,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3876490383451432700, guid: e846845a5afd24e25a442dae9089a244, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876490383451432700, guid: e846845a5afd24e25a442dae9089a244, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5420216411280599765, guid: e846845a5afd24e25a442dae9089a244, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -333,6 +341,14 @@ PrefabInstance:
     - target: {fileID: 7471587698148846648, guid: e846845a5afd24e25a442dae9089a244, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119488629779681723, guid: e846845a5afd24e25a442dae9089a244, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119488629779681723, guid: e846845a5afd24e25a442dae9089a244, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

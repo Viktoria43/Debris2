@@ -94,6 +94,6 @@ public class spawn : MonoBehaviour
         }
         mv = curObj.GetComponent<PlayerMovement>();
         rb = curObj.GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector3(0f, 0.5f, 0f);
+        rb.velocity = new Vector3(0f, -0.5f, 0f);
     }
 }
