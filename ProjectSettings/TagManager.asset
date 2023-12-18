@@ -7,6 +7,8 @@ TagManager:
   - Borders
   - Block
   - Floor
+  - LeftBorder
+  - RightBorder
   layers:
   - Default
   - TransparentFX

@@ -286,6 +286,14 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5420216411280599765, guid: e846845a5afd24e25a442dae9089a244, type: 3}
+      propertyPath: m_TagString
+      value: LeftBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885980855048469154, guid: e846845a5afd24e25a442dae9089a244, type: 3}
+      propertyPath: m_TagString
+      value: RightBorder
+      objectReference: {fileID: 0}
     - target: {fileID: 7471587698148846648, guid: e846845a5afd24e25a442dae9089a244, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
     private Rigidbody2D rb;
     void Start()
     {
@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public float speed = 1f;
     public bool hasCollided = false;
-
     void Update()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -34,8 +33,14 @@ public class PlayerMovement : MonoBehaviour
         return Mathf.Abs(rb.velocity.y) > velocityThreshold;
     }
     private void OnCollisionEnter2D(Collision2D collision){
-        if(!collision.collider.CompareTag("Borders")){
+        if(!collision.collider.CompareTag("LeftBorder") && !collision.collider.CompareTag("RightBorder")){
             hasCollided = true;
+            //GetComponent<Variables>().collided = true;
+            //idea: create RigidBody2D for every child in code here, then handle all objects
+            //independently. Recursive function for checking if a line is formed: 
+            //called from LeftBorder and ends at RightBorder (true) or till no other block (false)
         }
     }
+    //i can eventually do another script for that, but its easier like this so first 
+    //i will have to see if it even works
 }
