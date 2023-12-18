@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float gravityScale = 0.1f;
-    public float speedRateIncrease = 0.1f;
+    public float speedRateIncrease = 0.001f;
     public float speed = 0.01f;
     public bool hasCollided = false;
     private Rigidbody2D rb;
