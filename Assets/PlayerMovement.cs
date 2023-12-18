@@ -6,12 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public float gravityScale = 0.1f;
     public float speedRateIncrease = 0.001f;
-    public float speed = 0.01f;
+    public float speed = 0.1f;
+    public float moveSpeed = 2f;
     public bool hasCollided = false;
     private Rigidbody2D rb;
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -24,9 +26,32 @@ public class PlayerMovement : MonoBehaviour
         if (IsFalling() && !hasCollided)
         {
             rb.gravityScale = gravityScale + speedRateIncrease * Time.time;
-            transform.Translate(movement * speed * Time.deltaTime);
+            // transform.Translate(movement * speed * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.Rotate(Vector3.forward, 90f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                // Move the player to the left in its local space
+                transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                // Move the player to the right in its local space
+                transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                // Move the player down in its local space
+                transform.Translate(transform.TransformDirection(Vector3.down) * 1f);
+            }
         }
     }
+    
 
     public bool IsFalling()
     {

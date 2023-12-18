@@ -71,8 +71,8 @@ public class spawn : MonoBehaviour
         
         System.Random rd = new System.Random();
         //for testing
-        curObj = Instantiate(patO, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
-        /*
+        //curObj = Instantiate(patO, new Vector3(0f, 4.5f, 0f), Quaternion.identity);
+        
         int patNum = rd.Next(0, 7);
         switch (patNum)
         {
@@ -99,14 +99,14 @@ public class spawn : MonoBehaviour
                 break;
             default:
                 break;
-        }*/
+        }
         mv = curObj.GetComponent<PlayerMovement>();
         rb = curObj.GetComponent<Rigidbody2D>();
         sr = curObj.GetComponent<SpriteRenderer>();
         rb.velocity = new Vector3(0f, -0.5f, 0f);
         int colNum = rd.Next(0,3);
         sr.color = Color.red;
-        /*
+        
         switch(colNum){
             case 0:
                 sr.color = Color.red;
@@ -119,7 +119,7 @@ public class spawn : MonoBehaviour
                 break;
             default: 
                 break;
-        }*/
+        }
         //the lazy dumb way
         curObj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = sr.color;
         curObj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = sr.color;
