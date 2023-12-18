@@ -17,10 +17,12 @@ public class spawn : MonoBehaviour
     PlayerMovement mv;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    
     // Start is called before the first frame update
     void Start()
     {
         spawnRandom();
+        
     }
 
     // Update is called once per frame
@@ -32,10 +34,11 @@ public class spawn : MonoBehaviour
         if(Time.frameCount % 60 == 0){
             spawnRandom();
         }*/
-        if (mv.hasCollided)
+        if (mv.hasCollided )
         {
             //mv.hasCollided = true;
             spawnRandom();
+           
         }
 
     }
