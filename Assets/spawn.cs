@@ -16,6 +16,7 @@ public class spawn : MonoBehaviour
     private GameObject curObj;
     PlayerMovement mv;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +32,9 @@ public class spawn : MonoBehaviour
         if(Time.frameCount % 60 == 0){
             spawnRandom();
         }*/
-        if (!mv.IsFalling() && !mv.hasCollided)
+        if (mv.hasCollided)
         {
-            mv.hasCollided = true;
+            //mv.hasCollided = true;
             spawnRandom();
         }
 
@@ -64,6 +65,7 @@ public class spawn : MonoBehaviour
     }*/
     public void spawnRandom()
     {
+        
         System.Random rd = new System.Random();
         int patNum = rd.Next(0, 7);
         switch (patNum)
@@ -94,6 +96,25 @@ public class spawn : MonoBehaviour
         }
         mv = curObj.GetComponent<PlayerMovement>();
         rb = curObj.GetComponent<Rigidbody2D>();
+        sr = curObj.GetComponent<SpriteRenderer>();
         rb.velocity = new Vector3(0f, -0.5f, 0f);
+        int colNum = rd.Next(0,3);
+        switch(colNum){
+            case 0:
+                sr.color = Color.red;
+                break;
+            case 1:
+                sr.color = Color.blue;
+                break;
+            case 2:
+                sr.color = Color.green;
+                break;
+            default: 
+                break;
+        }
+        //the lazy dumb way
+        curObj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = sr.color;
+        curObj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = sr.color;
+        curObj.transform.GetChild(2).GetComponent<SpriteRenderer>().color = sr.color;
     }
 }
