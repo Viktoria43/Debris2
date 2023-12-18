@@ -162,7 +162,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.007, y: 4.625, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5828991083043425411}
@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826d48b3e4d9a4b16ab56ca8c53a38df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityScale: 0.1
+  speedRateIncrease: 0.1
   speed: 5
   hasCollided: 0
 --- !u!114 &-890102674494583454
@@ -332,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3891fe4c76980425fbcac2e37c6fbb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marked: 0
 --- !u!1 &5807775703635238353
 GameObject:
   m_ObjectHideFlags: 0
