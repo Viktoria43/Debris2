@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     void Start()
     {
-        // Assuming the script is attached to a GameObject with a Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
     }
     public float speed = 1f;
@@ -27,8 +26,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public bool IsFalling()
     {
-        // Check if the magnitude of the vertical velocity is greater than a threshold
-        // You can adjust the threshold value based on your needs
         float velocityThreshold = 0.1f;
         return Mathf.Abs(rb.velocity.y) > velocityThreshold;
     }
