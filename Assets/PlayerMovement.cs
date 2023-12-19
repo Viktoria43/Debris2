@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 2f;
     public bool hasCollided = false;
     private Rigidbody2D rb;
+    
+    bool rotation = false;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f).normalized;
@@ -29,25 +32,36 @@ public class PlayerMovement : MonoBehaviour
             // transform.Translate(movement * speed * Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+                rotation = !rotation;
+                Debug.Log(rotation);
                 transform.Rotate(Vector3.forward, 90f);
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow)&&!rotation)
             {
-                // Move the player to the left in its local space
                 transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
             }
-
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.LeftArrow)&&rotation)
             {
-                // Move the player to the right in its local space
                 transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !rotation)
             {
-                // Move the player down in its local space
+                transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow)&&rotation)
+            {
+                transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow)&& !rotation)
+            {
                 transform.Translate(transform.TransformDirection(Vector3.down) * 1f);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow)&&rotation)
+            {
+                transform.Translate(transform.TransformDirection(Vector3.up) * 1f);
             }
         }
     }
