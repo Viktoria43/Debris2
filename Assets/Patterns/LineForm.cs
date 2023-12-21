@@ -22,9 +22,9 @@ public class LineForm : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision){
         if(collision.collider.CompareTag("LeftBorder")){
-            List<GameObject> l = new List<GameObject>(){instance};
+            List<GameObject> l = new List<GameObject>(){this.gameObject};
             bool isLine = false;
-            isLine = lineForming(l, collision.gameObject.GetComponent<SpriteRenderer>().color);
+            isLine = lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().color);
             if(isLine){
                 destroyObjs(l);
             }
@@ -32,11 +32,32 @@ public class LineForm : MonoBehaviour
     }
     //Idea: return bool for destroyed or not, destroy in method
     private bool lineForming(List<GameObject> line, Color col){
+        marked = true;
+        if(marked){
+            gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
         List<Collider2D> colObjs = new List<Collider2D>();
-        ContactFilter2D fil = new();
-        fil.NoFilter();
-        int colNum = Physics2D.OverlapCircle(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), 1f, 
-                                fil, colObjs);
+        int colNum = Physics2D.GetContacts(GetComponent<Collider2D>(), colObjs);
+        foreach(Collider2D e in colObjs){
+            if (e.gameObject != null) {
+                LineForm lineForm = e.gameObject.GetComponent<LineForm>();
+                if (lineForm != null) {
+                    if(lineForm.marked){
+                        
+                    }else{
+                        Debug.Log("I am object " + colObjs.IndexOf(e) + e.gameObject.tag);
+                        lineForm.marked = true;
+                        line.Add(e.gameObject);
+                        lineForm.lineForming(line, col);
+                    }
+                }
+            }
+            
+            if(e.gameObject.tag != "LeftBorder" && e.gameObject.tag != "Floor"){
+            //Destroy(e.gameObject);
+            }
+        }
+        /*
         for(int i = colNum-1;i >= 0;--i){
             if(colObjs[i].CompareTag("RightBorder")){
                 //destroy here
@@ -49,12 +70,13 @@ public class LineForm : MonoBehaviour
                 Debug.Log(countBug);
                 colObjs.RemoveAt(i);
             }else if(!colObjs[i].gameObject.GetComponent<LineForm>().marked){
-                marked = true;
+                
                 Debug.Log("Nooooooooooooooooo");
                 line.Add(colObjs[i].gameObject);
                 return lineForming(line, col);
             }
-        }
+        }*/
+        //marked = false;
         return false;
     }
     private void destroyObjs(List<GameObject> list){
