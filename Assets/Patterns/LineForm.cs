@@ -18,9 +18,13 @@ public class LineForm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Time.time % 2f < 1f){
+            marked = false;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
     }
     private void OnCollisionStay2D(Collision2D collision){
+        /*
         if(collision.collider.CompareTag("LeftBorder")){
             List<GameObject> l = new List<GameObject>(){this.gameObject};
             bool isLine = false;
@@ -28,10 +32,10 @@ public class LineForm : MonoBehaviour
             if(isLine){
                 destroyObjs(l);
             }
-        }
+        }*/
     }
     //Idea: return bool for destroyed or not, destroy in method
-    private bool lineForming(List<GameObject> line, Color col){
+    public bool lineForming(List<GameObject> line, Color col){
         marked = true;
         if(marked){
             gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
@@ -45,7 +49,7 @@ public class LineForm : MonoBehaviour
                     if(lineForm.marked){
                         
                     }else{
-                        Debug.Log("I am object " + colObjs.IndexOf(e) + e.gameObject.tag);
+                        //Debug.Log("I am object " + colObjs.IndexOf(e) + e.gameObject.tag);
                         lineForm.marked = true;
                         line.Add(e.gameObject);
                         lineForm.lineForming(line, col);

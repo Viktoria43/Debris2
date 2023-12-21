@@ -79,8 +79,22 @@ public class PlayerMovement : MonoBehaviour
         if (!collision.collider.CompareTag("LeftBorder") && !collision.collider.CompareTag("RightBorder"))
         {
             hasCollided = true;
+            List<Transform> children = new List<Transform>();
+            children.Add(gameObject.transform.GetChild(0));
+            children.Add(gameObject.transform.GetChild(1));
+            children.Add(gameObject.transform.GetChild(2));
+            foreach(Transform child in children){
+                Rigidbody2D rb = child.gameObject.GetComponent<Rigidbody2D>();
+                // If the Rigidbody component doesn't exist, add it
+                if (rb == null)
+                {
+                    rb = child.gameObject.AddComponent<Rigidbody2D>();
+                    // Customize the Rigidbody properties if needed
+                    rb.gravityScale = 1.0f; // For example, set the gravity scale
+                    // ...other settings
+                }
+            }
             this.gameObject.transform.DetachChildren();
-            
         }
     }
 }

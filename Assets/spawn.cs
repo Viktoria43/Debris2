@@ -28,16 +28,14 @@ public class spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //do spawn upon collision between objects tagged Block and obj tagged Borders
-        //ontriggerenter
-        /*
-        if(Time.frameCount % 60 == 0){
-            spawnRandom();
-        }*/
         if (mv.hasCollided )
         {
             //mv.hasCollided = true;
-            spawnRandom();
+            //spawnRandom();
+            //this is for debugging
+            if(Input.GetKeyDown(KeyCode.S)){
+                curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+            }
            
         }
 
