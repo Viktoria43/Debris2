@@ -4,8 +4,10 @@ using System;
 using UnityEngine;
 using Unity.VisualScripting;
 
+
 public class spawn : MonoBehaviour
 {
+    public TextureManager textureManager;
     public GameObject patT;
     public GameObject patL;
     public GameObject patZ;
@@ -21,6 +23,7 @@ public class spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textureManager = GetComponent<TextureManager>();
         spawnRandom();
         
     }
@@ -35,6 +38,7 @@ public class spawn : MonoBehaviour
             //this is for debugging
             if(Input.GetKeyDown(KeyCode.S)){
                 curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                AssignRandomTexture(curObj);
             }
            
         }
@@ -64,6 +68,18 @@ public class spawn : MonoBehaviour
             spawnRandom();
         }
     }*/
+    void AssignRandomTexture(GameObject obj)
+    {
+        if (textureManager != null)
+        {
+            // Assuming that the TextureManager has a method to assign random textures
+            textureManager.AssignRandomTexture(obj);
+        }
+        else
+        {
+            Debug.LogError("TextureManager is not assigned.");
+        }
+    }
     public void spawnRandom()
     {
         
@@ -103,7 +119,7 @@ public class spawn : MonoBehaviour
         sr = curObj.GetComponent<SpriteRenderer>();
         rb.velocity = new Vector3(0f, -0.5f, 0f);
         int colNum = rd.Next(0,3);
-        sr.color = Color.red;
+      //  sr.color = Color.red;
         /*
         switch(colNum){
             case 0:
@@ -122,5 +138,6 @@ public class spawn : MonoBehaviour
         curObj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = sr.color;
         curObj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = sr.color;
         curObj.transform.GetChild(2).GetComponent<SpriteRenderer>().color = sr.color;
+        AssignRandomTexture(curObj);
     }
 }

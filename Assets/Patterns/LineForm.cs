@@ -7,7 +7,7 @@ public class LineForm : MonoBehaviour
     public bool marked;
     private PlayerMovement mv;
     GameObject instance;
-    int countBug = 0;
+   // int countBug = 0;
     // Start is called before the first frame update
     void Start()
     {
