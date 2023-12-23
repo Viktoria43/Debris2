@@ -20,7 +20,7 @@ public class LineForm : MonoBehaviour
     {
         if(Time.time % 2f < 1f){
             marked = false;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+            // gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
         }
     }
     public bool lineForming(List<GameObject> line, Color col){
