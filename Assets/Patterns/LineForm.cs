@@ -20,21 +20,9 @@ public class LineForm : MonoBehaviour
     {
         if(Time.time % 2f < 1f){
             marked = false;
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
         }
     }
-    private void OnCollisionStay2D(Collision2D collision){
-        /*
-        if(collision.collider.CompareTag("LeftBorder")){
-            List<GameObject> l = new List<GameObject>(){this.gameObject};
-            bool isLine = false;
-            isLine = lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().color);
-            if(isLine){
-                destroyObjs(l);
-            }
-        }*/
-    }
-    //Idea: return bool for destroyed or not, destroy in method
     public bool lineForming(List<GameObject> line, Color col){
         marked = true;
         if(marked){
@@ -46,14 +34,14 @@ public class LineForm : MonoBehaviour
             if (e.gameObject != null) {
                 LineForm lineForm = e.gameObject.GetComponent<LineForm>();
                 if (lineForm != null) {
-                    if(lineForm.marked){
-                        
-                    }else{
+                    if(!lineForm.marked){
                         //Debug.Log("I am object " + colObjs.IndexOf(e) + e.gameObject.tag);
-                        lineForm.marked = true;
+                        //lineForm.marked = true;
                         line.Add(e.gameObject);
-                        lineForm.lineForming(line, col);
+                        return lineForm.lineForming(line, col);
                     }
+                }else if(e.gameObject.CompareTag("RightBorder")){
+                    return true;
                 }
             }
             
@@ -61,31 +49,7 @@ public class LineForm : MonoBehaviour
             //Destroy(e.gameObject);
             }
         }
-        /*
-        for(int i = colNum-1;i >= 0;--i){
-            if(colObjs[i].CompareTag("RightBorder")){
-                //destroy here
-                marked = false;
-                Debug.Log("Fuckkkkkkkkkkkk");
-                return true;
-                //assuming that the borders have different colors... hoo boi, this can break so hard
-            }else if(colObjs[i].gameObject.GetComponent<LineForm>().marked || col != colObjs[i].gameObject.GetComponent<SpriteRenderer>().color){
-                countBug++;
-                Debug.Log(countBug);
-                colObjs.RemoveAt(i);
-            }else if(!colObjs[i].gameObject.GetComponent<LineForm>().marked){
-                
-                Debug.Log("Nooooooooooooooooo");
-                line.Add(colObjs[i].gameObject);
-                return lineForming(line, col);
-            }
-        }*/
         //marked = false;
         return false;
-    }
-    private void destroyObjs(List<GameObject> list){
-        foreach(GameObject e in list){
-            Destroy(e);
-        }
     }
 }

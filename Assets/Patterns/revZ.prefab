@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6188910821353621516}
   - component: {fileID: 8909539061868511598}
   - component: {fileID: 2441793971133941877}
+  - component: {fileID: 6191887408819322814}
   m_Layer: 0
   m_Name: revZTop
   m_TagString: Block
@@ -130,6 +131,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6191887408819322814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557245738270897742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
 --- !u!1 &6676470074425775020
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +158,7 @@ GameObject:
   - component: {fileID: 6000874175100414703}
   - component: {fileID: 5501779734910792784}
   - component: {fileID: 250503034596597308}
+  - component: {fileID: 6639224513055455813}
   m_Layer: 0
   m_Name: revZLeft
   m_TagString: Block
@@ -260,6 +278,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6639224513055455813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676470074425775020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
 --- !u!1 &7399422717139099952
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +309,7 @@ GameObject:
   - component: {fileID: 8013358159493086431}
   - component: {fileID: 8906686077858051090}
   - component: {fileID: 1512455203411731664}
+  - component: {fileID: 3598129315154665030}
   m_Layer: 0
   m_Name: revZ
   m_TagString: Block
@@ -342,7 +377,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.08235294, g: 0.6156863, b: 0.65882355, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -439,6 +474,7 @@ MonoBehaviour:
   gravityScale: 0.1
   speedRateIncrease: 0.1
   speed: 5
+  moveSpeed: 2
   hasCollided: 0
 --- !u!114 &8906686077858051090
 MonoBehaviour:
@@ -465,6 +501,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+--- !u!114 &3598129315154665030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7399422717139099952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
 --- !u!1 &7816958910780777964
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +528,7 @@ GameObject:
   - component: {fileID: 3186827508991949613}
   - component: {fileID: 1617227107092830875}
   - component: {fileID: 2605821432067431026}
+  - component: {fileID: 8108149784308293213}
   m_Layer: 0
   m_Name: revZRight
   m_TagString: Block
@@ -595,3 +648,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8108149784308293213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816958910780777964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}

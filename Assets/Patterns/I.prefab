@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8069549114138225343}
   - component: {fileID: 7863750145015087852}
   - component: {fileID: -6308573916262847883}
+  - component: {fileID: 9024226548565170531}
   m_Layer: 0
   m_Name: I
   m_TagString: Block
@@ -80,9 +81,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.08235294, g: 0.6156863, b: 0.65882355, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,6 +180,7 @@ MonoBehaviour:
   gravityScale: 0.1
   speedRateIncrease: 0.1
   speed: 5
+  moveSpeed: 2
   hasCollided: 0
 --- !u!114 &7863750145015087852
 MonoBehaviour:
@@ -205,6 +207,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+--- !u!114 &9024226548565170531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919254941181446434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
 --- !u!1 &3678979583723343004
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +234,7 @@ GameObject:
   - component: {fileID: 3065155619445521782}
   - component: {fileID: 575216173937996319}
   - component: {fileID: 8110632760528801562}
+  - component: {fileID: 8942539747312395128}
   m_Layer: 0
   m_Name: ITop
   m_TagString: Block
@@ -335,6 +354,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8942539747312395128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678979583723343004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
 --- !u!1 &6729817791821231472
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +381,7 @@ GameObject:
   - component: {fileID: 1062826080028678831}
   - component: {fileID: 4277512369637545208}
   - component: {fileID: 4145399558513453910}
+  - component: {fileID: 7273871979032156314}
   m_Layer: 0
   m_Name: IBottom
   m_TagString: Block
@@ -465,6 +501,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7273871979032156314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6729817791821231472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
 --- !u!1 &7114433444431279786
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +528,7 @@ GameObject:
   - component: {fileID: 4790838799550351899}
   - component: {fileID: 7566853097250844193}
   - component: {fileID: 4585059534393061483}
+  - component: {fileID: 6604107538053472732}
   m_Layer: 0
   m_Name: ITopper
   m_TagString: Block
@@ -595,3 +648,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6604107538053472732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7114433444431279786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}

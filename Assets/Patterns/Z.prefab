@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3438435660966298834}
   - component: {fileID: -649417347634923871}
   - component: {fileID: -8879174198615530470}
+  - component: {fileID: 9178273164754611275}
   m_Layer: 0
   m_Name: Z
   m_TagString: Block
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.08235294, g: 0.6156863, b: 0.65882355, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,6 +180,7 @@ MonoBehaviour:
   gravityScale: 0.1
   speedRateIncrease: 0.1
   speed: 5
+  moveSpeed: 2
   hasCollided: 0
 --- !u!114 &-649417347634923871
 MonoBehaviour:
@@ -205,6 +207,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+--- !u!114 &9178273164754611275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793267806013786104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
 --- !u!1 &7122521466282878807
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +234,7 @@ GameObject:
   - component: {fileID: 5920192540151343314}
   - component: {fileID: 1001935332914253844}
   - component: {fileID: 7027528727170243902}
+  - component: {fileID: 3351404738933256187}
   m_Layer: 0
   m_Name: ZTop
   m_TagString: Block
@@ -335,6 +354,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3351404738933256187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122521466282878807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
 --- !u!1 &7319532523159108013
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +381,7 @@ GameObject:
   - component: {fileID: 6498133598503524600}
   - component: {fileID: 983246631559003602}
   - component: {fileID: 3618891276923534934}
+  - component: {fileID: 1794759028811821210}
   m_Layer: 0
   m_Name: ZLeft
   m_TagString: Block
@@ -408,7 +444,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -465,6 +501,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1794759028811821210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319532523159108013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
 --- !u!1 &8797786728745388452
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +528,7 @@ GameObject:
   - component: {fileID: 2129562767353851473}
   - component: {fileID: 7604146619035906418}
   - component: {fileID: 5742909065544344159}
+  - component: {fileID: 6898881722180839107}
   m_Layer: 0
   m_Name: ZRight
   m_TagString: Block
@@ -595,3 +648,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6898881722180839107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797786728745388452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6347f3ac3004db9b6d87eb01bf8af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
+  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
