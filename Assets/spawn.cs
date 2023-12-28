@@ -82,38 +82,37 @@ public class spawn : MonoBehaviour
     }
     public void spawnRandom()
     {
-        
         System.Random rd = new System.Random();
         //for testing
-      curObj = Instantiate(patRevZ, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+     // curObj = Instantiate(patI, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
         
-        // int patNum = rd.Next(0, 7);
-        // switch (patNum)
-        // {
-        //     case 0:
-        //         curObj = Instantiate(patI, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     case 1:
-        //         curObj = Instantiate(patL, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     case 2:
-        //         curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     case 3:
-        //         curObj = Instantiate(patRevL, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     case 4:
-        //         curObj = Instantiate(patRevZ, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     case 5:
-        //         curObj = Instantiate(patT, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     case 6:
-        //         curObj = Instantiate(patZ, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-        //         break;
-        //     default:
-        //         break;
-        // }
+        int patNum = rd.Next(0, 7);
+        switch (patNum)
+        {
+            case 0:
+                curObj = Instantiate(patI, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            case 1:
+                curObj = Instantiate(patL, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            case 2:
+                curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            case 3:
+                curObj = Instantiate(patRevL, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            case 4:
+                curObj = Instantiate(patRevZ, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            case 5:
+                curObj = Instantiate(patT, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            case 6:
+                curObj = Instantiate(patZ, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                break;
+            default:
+                break;
+        }
         mv = curObj.GetComponent<PlayerMovement>();
         rb = curObj.GetComponent<Rigidbody2D>();
         sr = curObj.GetComponent<SpriteRenderer>();
