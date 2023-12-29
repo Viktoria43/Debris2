@@ -55,6 +55,7 @@ public class spawn : MonoBehaviour
             sp.spawnRandom();
         }
     }*/
+
     //This is called, when collision between the calling object and other object happens
     /*private void OnCollisionEnter2D(Collision2D collision){
         //so far detects only if the parent object collided
@@ -84,9 +85,9 @@ public class spawn : MonoBehaviour
     {
         System.Random rd = new System.Random();
         //for testing
-     // curObj = Instantiate(patI, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+ curObj = Instantiate(patI, new Vector3(0.5f, 9.5f, 0f), Quaternion.identity);
         
-        int patNum = rd.Next(0, 7);
+       /*  int patNum = rd.Next(0, 7);
         switch (patNum)
         {
             case 0:
@@ -112,7 +113,7 @@ public class spawn : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
         mv = curObj.GetComponent<PlayerMovement>();
         rb = curObj.GetComponent<Rigidbody2D>();
         sr = curObj.GetComponent<SpriteRenderer>();
