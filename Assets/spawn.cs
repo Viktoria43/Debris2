@@ -33,8 +33,8 @@ public class spawn : MonoBehaviour
     {
         if (mv.hasCollided )
         {
-            //mv.hasCollided = true;
-            //spawnRandom();
+            mv.hasCollided = true;
+            spawnRandom();
             //this is for debugging
             if(Input.GetKeyDown(KeyCode.S)){
                 curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
@@ -85,9 +85,9 @@ public class spawn : MonoBehaviour
     {
         System.Random rd = new System.Random();
         //for testing
- curObj = Instantiate(patI, new Vector3(0.5f, 9.5f, 0f), Quaternion.identity);
+curObj = Instantiate(patI, new Vector3(0.5f, 8.5f, 0f), Quaternion.identity);
         
-       /*  int patNum = rd.Next(0, 7);
+   /*  int patNum = rd.Next(0, 7);
         switch (patNum)
         {
             case 0:

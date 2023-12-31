@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 children.Add(gameObject.transform.GetChild(1));
                 children.Add(gameObject.transform.GetChild(2));
             }
-            foreach(Transform child in children){
+          /*  foreach(Transform child in children){
                 Rigidbody2D rb = child.gameObject.GetComponent<Rigidbody2D>();
                 // If the Rigidbody component doesn't exist, add it
                 if (rb == null)
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
                     rb.gravityScale = 0.1f; // For example, set the gravity scale
                     // ...other settings
                 }
-            }
+            }*/
             this.gameObject.transform.DetachChildren();
         }
     }
