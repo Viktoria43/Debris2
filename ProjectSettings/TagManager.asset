@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - LeftBorder
   - RightBorder
+  - audio
   layers:
   - Default
   - TransparentFX

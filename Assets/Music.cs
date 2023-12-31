@@ -40,11 +40,18 @@ public class Music : MonoBehaviour
             {
                 soundButton.image.sprite = soundOn;
                 isPlaying = true;
+                
 
                 audioSource.mute = false;
             }
            
         }
+
+    private void Awake()
+    {
+        GameObject[] music = GameObject.FindGameObjectsWithTag("audio");
+        DontDestroyOnLoad(this.gameObject);
+    }
     }
 
 
