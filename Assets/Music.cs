@@ -9,7 +9,7 @@ public class Music : MonoBehaviour
     public Sprite soundOff;
     private bool isPlaying = true;
  
-    public AudioSource audioSource; // Changed from public to non-static
+    public AudioSource audioSource; 
     public Button soundButton;
 
     
