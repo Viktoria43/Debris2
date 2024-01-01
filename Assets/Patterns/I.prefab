@@ -223,7 +223,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 69370feecafce4910981f743fe08ca10, type: 3}
   - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
-  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
 --- !u!61 &3575889187096996897
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
   - {fileID: 21300000, guid: 69370feecafce4910981f743fe08ca10, type: 3}
-  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
 --- !u!61 &4325811422403380944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 69370feecafce4910981f743fe08ca10, type: 3}
   - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
-  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
 --- !u!61 &689611918356305170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 69370feecafce4910981f743fe08ca10, type: 3}
   - {fileID: 21300000, guid: 9f1f3eb7cdd0c40068be7f3da9922911, type: 3}
-  - {fileID: 21300000, guid: 1be74206f4d5a4367bb9028b6dd196a5, type: 3}
+  - {fileID: 21300000, guid: 867c86c785dab435f85a61b8d7cd56d2, type: 3}
 --- !u!61 &2175307682433901662
 BoxCollider2D:
   m_ObjectHideFlags: 0
