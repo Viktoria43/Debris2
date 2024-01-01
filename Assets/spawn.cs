@@ -85,7 +85,7 @@ public class spawn : MonoBehaviour
     {
         System.Random rd = new System.Random();
         //for testing
-curObj = Instantiate(patO, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
+curObj = Instantiate(patI, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
         
    /*  int patNum = rd.Next(0, 7);
         switch (patNum)
