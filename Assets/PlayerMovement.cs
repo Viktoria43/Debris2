@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
                     rb = child.gameObject.AddComponent<Rigidbody2D>();
                     // Customize the Rigidbody properties if needed
                     rb.gravityScale = 0.1f; // For example, set the gravity scale
-                    // ...other settings
+                    rb.velocity = GetComponent<Rigidbody2D>().velocity;
                 }
             }
             this.gameObject.transform.DetachChildren();

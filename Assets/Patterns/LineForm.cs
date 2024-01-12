@@ -28,16 +28,17 @@ public class LineForm : MonoBehaviour
             List<GameObject> l = new List<GameObject>(){this.gameObject};
             bool isLine = false;
             //Debug.Log("Contact " + colObjs.IndexOf(e));
-            isLine = lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().color);
+            isLine = lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().sprite);
             if(isLine){
                 destroyObjs(l);
             }
         }
     }
-    public bool lineForming(List<GameObject> line, Color col){
+    public bool lineForming(List<GameObject> line, Sprite col){
         marked = true;
+        bool reachedEnd = false;
         if(marked){
-            gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         }
         List<Collider2D> colObjs = new List<Collider2D>();
         int colNum = Physics2D.GetContacts(GetComponent<Collider2D>(), colObjs);
@@ -45,24 +46,22 @@ public class LineForm : MonoBehaviour
             if (e.gameObject != null) {
                 LineForm lineForm = e.gameObject.GetComponent<LineForm>();
                 if (lineForm != null) {
-                    if(!lineForm.marked){
+                    if(!lineForm.marked && lineForm.gameObject.GetComponent<SpriteRenderer>().sprite == col){
                         //Debug.Log("I am object " + colObjs.IndexOf(e) + e.gameObject.tag);
                         //lineForm.marked = true;
                         Debug.DrawLine(transform.position, e.gameObject.transform.position, Color.red, 3f);
                         line.Add(e.gameObject);
-                        return lineForm.lineForming(line, col);
+                        //change the value in a boolean variable for the different lines. 
+                        //return lineForm.lineForming(line, col);
+                        reachedEnd = reachedEnd || lineForm.lineForming(line, col);
                     }
                 }else if(e.gameObject.CompareTag("RightBorder")){
                     return true;
                 }
             }
-            
-            if(e.gameObject.tag != "LeftBorder" && e.gameObject.tag != "Floor"){
-            //Destroy(e.gameObject);
-            }
         }
         //marked = false;
-        return false;
+        return reachedEnd;
     }
 
     private void destroyObjs(List<GameObject> list){

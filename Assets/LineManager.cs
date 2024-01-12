@@ -26,7 +26,7 @@ public class LineManager : MonoBehaviour
                         List<GameObject> l = new List<GameObject>(){this.gameObject};
                         bool isLine = false;
                         Debug.Log("Contact " + colObjs.IndexOf(e));
-                        isLine = lineForm.lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().color);
+                        isLine = lineForm.lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().sprite);
                         if(isLine){
                             destroyObjs(l);
                         }
