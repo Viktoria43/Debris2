@@ -119,25 +119,10 @@ curObj = Instantiate(patI, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
         sr = curObj.GetComponent<SpriteRenderer>();
         rb.velocity = new Vector3(0f, -0.5f, 0f);
         int colNum = rd.Next(0,3);
-      //  sr.color = Color.red;
-        /*
-        switch(colNum){
-            case 0:
-                sr.color = Color.red;
-                break;
-            case 1:
-                sr.color = Color.blue;
-                break;
-            case 2:
-                sr.color = Color.green;
-                break;
-            default: 
-                break;
-        }*/
         //the lazy dumb way
-        curObj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = sr.color;
-        curObj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = sr.color;
-        curObj.transform.GetChild(2).GetComponent<SpriteRenderer>().color = sr.color;
+        //curObj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = sr.color;
+        //curObj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = sr.color;
+        //curObj.transform.GetChild(2).GetComponent<SpriteRenderer>().color = sr.color;
         AssignRandomTexture(curObj);
     }
 }

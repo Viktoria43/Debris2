@@ -20,6 +20,9 @@ public class LineManager : MonoBehaviour
                 if (e.gameObject != null) {
                     LineForm lineForm = e.gameObject.GetComponent<LineForm>();
                     if (lineForm != null) {
+                        //everything, that touched the left wall, has this bool set to true to start searching for lines. 
+                        lineForm.touchesLeft = true;
+                        /*
                         List<GameObject> l = new List<GameObject>(){this.gameObject};
                         bool isLine = false;
                         Debug.Log("Contact " + colObjs.IndexOf(e));
@@ -27,6 +30,7 @@ public class LineManager : MonoBehaviour
                         if(isLine){
                             destroyObjs(l);
                         }
+                        */
                     }
                 }
             }

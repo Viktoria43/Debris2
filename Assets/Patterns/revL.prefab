@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3863124847037421365}
   - component: {fileID: 2863484471526153723}
   - component: {fileID: 5757121188706253303}
+  - component: {fileID: 1435596826847172174}
   m_Layer: 0
   m_Name: revLTop
   m_TagString: Block
@@ -130,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!114 &2863484471526153723
 MonoBehaviour:
@@ -193,6 +194,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.1
+--- !u!114 &1435596826847172174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718073990295002317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3891fe4c76980425fbcac2e37c6fbb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marked: 0
 --- !u!1 &6184294558907133351
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +220,7 @@ GameObject:
   - component: {fileID: 82915858708017145}
   - component: {fileID: 8144886223684969363}
   - component: {fileID: 3606630697737927491}
+  - component: {fileID: 1433092472843235910}
   m_Layer: 0
   m_Name: revLLeft
   m_TagString: Block
@@ -323,7 +338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!114 &8144886223684969363
 MonoBehaviour:
@@ -386,6 +401,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.1
+--- !u!114 &1433092472843235910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184294558907133351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3891fe4c76980425fbcac2e37c6fbb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marked: 0
 --- !u!1 &6367632508173789861
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +578,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!114 &-4574331668507936151
 MonoBehaviour:
@@ -668,6 +696,7 @@ GameObject:
   - component: {fileID: 8550907224086474331}
   - component: {fileID: 7161623286809649317}
   - component: {fileID: 724274610640680536}
+  - component: {fileID: 3566019805971599669}
   m_Layer: 0
   m_Name: revLTopper
   m_TagString: Block
@@ -785,7 +814,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!114 &7161623286809649317
 MonoBehaviour:
@@ -848,3 +877,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.1
+--- !u!114 &3566019805971599669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900511827521006619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3891fe4c76980425fbcac2e37c6fbb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marked: 0
