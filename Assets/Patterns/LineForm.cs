@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LineForm : MonoBehaviour
@@ -8,6 +9,7 @@ public class LineForm : MonoBehaviour
     public bool touchesLeft;
     private PlayerMovement mv;
     GameObject instance;
+    Rigidbody2D rb;
    // int countBug = 0;
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,9 @@ public class LineForm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Time.time % 2f < 1f){
             marked = false;
-            // gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
         }
         if(touchesLeft){
             List<GameObject> l = new List<GameObject>(){this.gameObject};
@@ -33,13 +35,18 @@ public class LineForm : MonoBehaviour
                 destroyObjs(l);
             }
         }
+        touchesLeft = false;
+        //maybe make a check for == 0 to optimize?...
+        if(Time.time % 1f < 1f){
+            rb = GetComponent<Rigidbody2D>();
+            if(rb != null){
+                rb.WakeUp();
+            }
+        }
     }
     public bool lineForming(List<GameObject> line, Sprite col){
         marked = true;
         bool reachedEnd = false;
-        if(marked){
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
-        }
         List<Collider2D> colObjs = new List<Collider2D>();
         int colNum = Physics2D.GetContacts(GetComponent<Collider2D>(), colObjs);
         foreach(Collider2D e in colObjs){
@@ -47,7 +54,6 @@ public class LineForm : MonoBehaviour
                 LineForm lineForm = e.gameObject.GetComponent<LineForm>();
                 if (lineForm != null) {
                     if(!lineForm.marked && lineForm.gameObject.GetComponent<SpriteRenderer>().sprite == col){
-                        //Debug.Log("I am object " + colObjs.IndexOf(e) + e.gameObject.tag);
                         //lineForm.marked = true;
                         Debug.DrawLine(transform.position, e.gameObject.transform.position, Color.red, 3f);
                         line.Add(e.gameObject);
@@ -62,6 +68,12 @@ public class LineForm : MonoBehaviour
         }
         //marked = false;
         return reachedEnd;
+    }
+
+    void OnTriggerStay2D(Collider2D other){
+        if(other.CompareTag("LeftBorder")){
+            touchesLeft = true;
+        }
     }
 
     private void destroyObjs(List<GameObject> list){

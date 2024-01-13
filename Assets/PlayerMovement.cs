@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         float velocityThreshold = 0.1f;
         return Mathf.Abs(rb.velocity.y) > velocityThreshold;
     }
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision){
         if (!collision.CompareTag("LeftBorder") && !collision.CompareTag("RightBorder"))
         {
@@ -94,6 +94,33 @@ public class PlayerMovement : MonoBehaviour
                     // Customize the Rigidbody properties if needed
                     rb.gravityScale = 0.1f; // For example, set the gravity scale
                     rb.velocity = GetComponent<Rigidbody2D>().velocity;
+                    rb.freezeRotation = true;
+                }
+            }
+            this.gameObject.transform.DetachChildren();
+        }
+    }*/
+    private void OnCollisionEnter2D(Collision2D collision){
+        if (!collision.collider.CompareTag("LeftBorder") && !collision.collider.CompareTag("RightBorder"))
+        {
+            hasCollided = true;
+            List<Transform> children = new List<Transform>();
+            
+            if(gameObject.transform.childCount != 0){
+                children.Add(gameObject.transform.GetChild(0));
+                children.Add(gameObject.transform.GetChild(1));
+                children.Add(gameObject.transform.GetChild(2));
+            }
+            foreach(Transform child in children){
+                Rigidbody2D rb = child.gameObject.GetComponent<Rigidbody2D>();
+                // If the Rigidbody component doesn't exist, add it
+                if (rb == null)
+                {
+                    rb = child.gameObject.AddComponent<Rigidbody2D>();
+                    // Customize the Rigidbody properties if needed
+                    rb.gravityScale = 0.1f; // For example, set the gravity scale
+                    rb.velocity = GetComponent<Rigidbody2D>().velocity;
+                    rb.freezeRotation = true;
                 }
             }
             this.gameObject.transform.DetachChildren();

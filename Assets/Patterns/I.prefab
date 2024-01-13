@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!114 &9024226548565170531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!1 &6729817791821231472
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!61 &689611918356305170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -890,3 +893,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0

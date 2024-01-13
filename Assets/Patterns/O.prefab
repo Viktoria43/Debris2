@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!114 &2057959796458098961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!114 &7582332941568767011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!114 &9043530414110006127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,7 +716,7 @@ Transform:
   m_GameObject: {fileID: 5831263244199858597}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.009, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -874,6 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marked: 0
+  touchesLeft: 0
 --- !u!114 &1222442201187341564
 MonoBehaviour:
   m_ObjectHideFlags: 0
