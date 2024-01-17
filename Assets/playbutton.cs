@@ -14,4 +14,12 @@ public class Buttons : MonoBehaviour
     {
         Application.Quit();
     }
+   public void Credentials()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
+   public void esc()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 }

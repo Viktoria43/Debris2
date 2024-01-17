@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 2f;
     public bool hasCollided = false;
     private Rigidbody2D rb;
+//private int leftCount = 0;
+//private int rightCount = 0;
     
     bool rotation = false;
 
