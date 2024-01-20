@@ -38,9 +38,4 @@ public class LineManager : MonoBehaviour
         }
         */
     }
-    private void destroyObjs(List<GameObject> list){
-        foreach(GameObject e in list){
-            Destroy(e);
-        }
-    }
 }

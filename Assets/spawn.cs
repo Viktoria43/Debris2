@@ -33,7 +33,6 @@ public class spawn : MonoBehaviour
     {
         if (mv.hasCollided )
         {
-            mv.hasCollided = true;
             spawnRandom();
             //this is for debugging
             if(Input.GetKeyDown(KeyCode.S)){
@@ -85,22 +84,22 @@ public class spawn : MonoBehaviour
     {
         System.Random rd = new System.Random();
         //for testing
-        curObj = Instantiate(patO, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
-        /*
+        //curObj = Instantiate(patO, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
+        
         int patNum = rd.Next(0, 7);
         switch (patNum)
         {
             case 0:
-                curObj = Instantiate(patI, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patI, new Vector3(0.5f, 6.5f, 0f), Quaternion.identity);
                 break;
             case 1:
-                curObj = Instantiate(patL, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patL, new Vector3(0.5f, 6.5f, 0f), Quaternion.identity);
                 break;
             case 2:
                 curObj = Instantiate(patO, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
                 break;
             case 3:
-                curObj = Instantiate(patRevL, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
+                curObj = Instantiate(patRevL, new Vector3(0.5f, 6.5f, 0f), Quaternion.identity);
                 break;
             case 4:
                 curObj = Instantiate(patRevZ, new Vector3(0.5f, 7.5f, 0f), Quaternion.identity);
@@ -113,7 +112,7 @@ public class spawn : MonoBehaviour
                 break;
             default:
                 break;
-        }*/
+        }
         mv = curObj.GetComponent<PlayerMovement>();
         rb = curObj.GetComponent<Rigidbody2D>();
         sr = curObj.GetComponent<SpriteRenderer>();

@@ -30,7 +30,7 @@ public class LineForm : MonoBehaviour
             List<GameObject> l = new List<GameObject>(){this.gameObject};
             bool isLine = false;
             //Debug.Log("Contact " + colObjs.IndexOf(e));
-            isLine = lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().sprite);
+            isLine = lineForming(l, this.gameObject.GetComponent<SpriteRenderer>().sprite, false);
             if(isLine){
                 destroyObjs(l);
             }
@@ -44,9 +44,9 @@ public class LineForm : MonoBehaviour
             }
         }
     }
-    public bool lineForming(List<GameObject> line, Sprite col){
+    public bool lineForming(List<GameObject> line, Sprite col, bool reachedEnd){
         marked = true;
-        bool reachedEnd = false;
+        //bool reachedEnd = false;
         List<Collider2D> colObjs = new List<Collider2D>();
         int colNum = Physics2D.GetContacts(GetComponent<Collider2D>(), colObjs);
         foreach(Collider2D e in colObjs){
@@ -59,10 +59,11 @@ public class LineForm : MonoBehaviour
                         line.Add(e.gameObject);
                         //change the value in a boolean variable for the different lines. 
                         //return lineForm.lineForming(line, col);
-                        reachedEnd = reachedEnd || lineForm.lineForming(line, col);
+                        reachedEnd = reachedEnd || lineForm.lineForming(line, col, reachedEnd);
                     }
                 }else if(e.gameObject.CompareTag("RightBorder")){
-                    return true;
+                    reachedEnd = true;
+                    //return true;
                 }
             }
         }
