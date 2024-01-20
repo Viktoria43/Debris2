@@ -10,10 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 2f;
     public bool hasCollided = false;
     private Rigidbody2D rb;
-//private int leftCount = 0;
-//private int rightCount = 0;
+private int leftCount = 0;
+private int rightCount = 0;
     
-    bool rotation = false;
+   // bool rotation = false;
+int rotation = 0;
 
     void Start()
     {
@@ -35,34 +36,82 @@ public class PlayerMovement : MonoBehaviour
             // transform.Translate(movement * speed * Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                rotation = !rotation;
+                //rotation = !rotation;
+rotation++;
+if(rotation == 5){
+rotation =0;
+}
                 Debug.Log(rotation);
                 transform.Rotate(Vector3.forward, 90f);
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow)&&!rotation)
+            if (Input.GetKeyDown(KeyCode.LeftArrow)&&rotation%2==0&&leftCount<=5)
             {
+if (rotation ==2&&leftCount<=4){
+leftCount++;
+rightCount--;
                 transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
+}
+else if (rotation ==4||rotation ==0&&leftCount<=5){
+leftCount++;
+rightCount--;
+                transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
+}
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow)&&rotation)
+            else if (Input.GetKeyDown(KeyCode.LeftArrow)&&rotation%2==1)
             {
-                transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+if (rotation ==1&&leftCount<=4){
+leftCount++;
+rightCount--;
+                 transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+}
+else if (rotation ==3&&leftCount<=5){
+leftCount++;
+rightCount--;
+                 transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+}
+               
             }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow) && !rotation)
+            if (Input.GetKeyDown(KeyCode.RightArrow) &&rotation%2==0)
             {
-                transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow)&&rotation)
-            {
-                transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
-            }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow)&& !rotation)
+ if ((rotation ==0||rotation ==4)&& rightCount<=3){
+ rightCount++;
+leftCount--;
+     Debug.Log(rightCount);
+                 transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+}
+ else if (rotation ==2&& rightCount<=4){
+ rightCount++;
+leftCount--;
+                 transform.Translate(transform.TransformDirection(Vector3.right) * 1f);
+}
+
+               
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow)&&rotation%2==1)
+            {
+if (rotation ==1&& rightCount<=4){
+ rightCount++;
+leftCount--;
+                transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
+}
+
+else if (rotation ==3&& rightCount<=3){
+ rightCount++;
+leftCount--;
+                transform.Translate(transform.TransformDirection(Vector3.left) * 1f);
+}
+
+}
+
+
+            if (Input.GetKeyDown(KeyCode.DownArrow)&& rotation%2==0)
             {
                 transform.Translate(transform.TransformDirection(Vector3.down) * 1f);
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow)&&rotation)
+            else if (Input.GetKeyDown(KeyCode.DownArrow)&&rotation%2==1)
             {
                 transform.Translate(transform.TransformDirection(Vector3.up) * 1f);
             }
