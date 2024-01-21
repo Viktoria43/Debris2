@@ -1667,6 +1667,7 @@ MonoBehaviour:
   patRevL: {fileID: 6367632508173789861, guid: 6faff855bf41f47c88890d089a956fc0, type: 3}
   patRevZ: {fileID: 7399422717139099952, guid: 95c243f1a438e494db0cfe63dc783a1d, type: 3}
   patI: {fileID: 2919254941181446434, guid: 2b237d336eee94bd5a0b07a7270208ff, type: 3}
+  gameOver: {fileID: 0}
 --- !u!1 &1115948238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,6 +2193,7 @@ MonoBehaviour:
   patRevL: {fileID: 6367632508173789861, guid: 6faff855bf41f47c88890d089a956fc0, type: 3}
   patRevZ: {fileID: 3793267806013786104, guid: bcaaa6e0f5a004cbeb899014413eec34, type: 3}
   patI: {fileID: 2919254941181446434, guid: 2b237d336eee94bd5a0b07a7270208ff, type: 3}
+  gameOver: {fileID: 0}
 --- !u!61 &1748992672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2643,6 +2645,7 @@ MonoBehaviour:
   patRevL: {fileID: 6367632508173789861, guid: 6faff855bf41f47c88890d089a956fc0, type: 3}
   patRevZ: {fileID: 3793267806013786104, guid: bcaaa6e0f5a004cbeb899014413eec34, type: 3}
   patI: {fileID: 2919254941181446434, guid: 2b237d336eee94bd5a0b07a7270208ff, type: 3}
+  gameOver: {fileID: 1115948238}
 --- !u!1 &2020231645
 GameObject:
   m_ObjectHideFlags: 0

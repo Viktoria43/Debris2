@@ -19,11 +19,15 @@ public class spawn : MonoBehaviour
     PlayerMovement mv;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    public GameObject gameOver;
+    private SpriteRenderer gameOverVis;
+    private int spawnCount;
     
     // Start is called before the first frame update
     void Start()
     {
         textureManager = GetComponent<TextureManager>();
+        spawnCount = 0;
         spawnRandom();
         
     }
@@ -31,43 +35,28 @@ public class spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mv.hasCollided )
-        {
-            spawnRandom();
-            //this is for debugging
-            if(Input.GetKeyDown(KeyCode.S)){
-                curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
-                AssignRandomTexture(curObj);
+        if(gameOverVis == null){
+            gameOverVis = gameOver.GetComponent<SpriteRenderer>();
+            gameOverVis.enabled = false;
+        }else if(gameOverVis.enabled == false){
+            if (mv.hasCollided )
+            {
+                spawnRandom();
+                //this is for debugging
+                /*
+                if(Input.GetKeyDown(KeyCode.S)){
+                    curObj = Instantiate(patO, new Vector3(0f, 9.5f, 0f), Quaternion.identity);
+                    AssignRandomTexture(curObj);
+                }*/
             }
-           
+        }else{
+            if(spawnCount < 7){
+                spawnCount++;
+                spawnRandom();
+            }
         }
 
     }
-    /*
-    private void OnCollisionEnter2D(Collision2D collision){
-        //so far detects only if the parent object collided
-        //Variables.Object(collision.gameObject).Get("hasCollided");
-        if (!hasCollided)
-        {
-            // Get the collision point and instantiate the object there
-            hasCollided = true;
-            sp.spawnRandom();
-        }
-    }*/
-
-    //This is called, when collision between the calling object and other object happens
-    /*private void OnCollisionEnter2D(Collision2D collision){
-        //so far detects only if the parent object collided
-        //Variables.Object(collision.gameObject).Get("hasCollided");
-        bool check = collision.gameObject.GetComponent<commonVars>().hasCollided;
-        if (!check && collision.gameObject.CompareTag("Block"))
-        {
-            // Get the collision point and instantiate the object there
-            collision.gameObject.GetComponent<commonVars>().hasCollided = true;
-          //  collision.gameObject.SetActive(false);
-            spawnRandom();
-        }
-    }*/
     void AssignRandomTexture(GameObject obj)
     {
         if (textureManager != null)
@@ -117,10 +106,6 @@ public class spawn : MonoBehaviour
         rb = curObj.GetComponent<Rigidbody2D>();
         sr = curObj.GetComponent<SpriteRenderer>();
         rb.velocity = new Vector3(0f, -0.5f, 0f);
-        //the lazy dumb way
-        //curObj.transform.GetChild(0).GetComponent<SpriteRenderer>().color = sr.color;
-        //curObj.transform.GetChild(1).GetComponent<SpriteRenderer>().color = sr.color;
-        //curObj.transform.GetChild(2).GetComponent<SpriteRenderer>().color = sr.color;
         AssignRandomTexture(curObj);
     }
 }
