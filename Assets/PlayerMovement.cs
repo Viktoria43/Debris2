@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float gravityScale = 0.1f;
-    public float speedRateIncrease = 0.001f;
+    public float speedRateIncrease = 0.00033f;
     public float speed = 0.1f;
     public float moveSpeed = 2f;
     public bool hasCollided = false;
@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
         if (IsFalling() && !hasCollided)
         {
             //testing
-            rb.gravityScale = gravityScale + speedRateIncrease * ((int)Time.time / 30);
+            //rb.gravityScale = gravityScale + speedRateIncrease * ((int)Time.timeSinceLevelLoad / 30);
+            //Time.timeSinceLevelLoad
             //transform.Translate(movement * speed * Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
